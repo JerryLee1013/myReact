@@ -15,9 +15,7 @@ export default class ComponentAdd extends Component{
     //  搜集数据,并封装成comment对象
     const comment = this.state
     //  更新状态
-    if(comment.username&&comment.content){
-      this.props.addComment(comment)
-    }
+    this.props.addComment(comment)
     //清除输入数据
     this.setState({
       username:"",

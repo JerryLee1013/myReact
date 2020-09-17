@@ -1,5 +1,4 @@
 import React, {Component} from "react"
-import PubSub from "pubsub-js"
 import ComponentAdd from "../component-add/component-add"
 import ComponentList from "../component-list/component-list"
 
@@ -22,14 +21,6 @@ export default class App extends Component{
       {username:"Lucy",content:"React没有vue好用"},
     ]
   }
-
-  componentDidMount() {
-    //订阅消息
-    PubSub.subscribe("deleteComment",(msg,index)=>{
-      this.deleteComment(index)
-    })
-  }
-
   //添加评论
   addComment = (comment) => {
     const {comments} = this.state
@@ -60,7 +51,7 @@ export default class App extends Component{
         </header>
         <div className="container">
           <ComponentAdd addComment={this.addComment}/>
-          <ComponentList comments={comments}/>
+          <ComponentList comments={comments} deleteComment={this.deleteComment}/>
         </div>
       </div>
     )
