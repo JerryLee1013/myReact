@@ -61,7 +61,17 @@ export default class Counter extends Component{
   incrementAsync = () =>{
     //得到选择增加数量
     const number = this.select.value*1
-    this.props.incrementAsync(number)
+
+    setTimeout(()=>{
+      this.props.increment(number)
+    },1000)
+
+    //得到原本的count状态
+    // const count = this.state.count
+    //更新状态
+    // setTimeout(()=>{
+    //   this.setState({count:count+number})
+    // },1000)
   }
 
   render() {
