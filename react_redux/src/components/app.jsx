@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import {INCREMENT,DECREMENT} from "../redux/action-types"
+import * as actions from "../redux/actions"
 
 export default class App extends Component{
   state = {
@@ -10,7 +10,7 @@ export default class App extends Component{
     const number = this.select.value*1
 
     //调用store的方法更新状态
-    this.props.store.dispatch({type:INCREMENT,data:number})
+    this.props.store.dispatch(actions.increment(number))
 
     //
 
@@ -26,7 +26,7 @@ export default class App extends Component{
     const number = this.select.value*1
 
     //调用store的方法更新状态
-    this.props.store.dispatch({type:DECREMENT,data:number})
+    this.props.store.dispatch(actions.decrement(number))
 
     //得到原本的count状态，并计算新的count
     // const count = this.state.count-number
@@ -41,7 +41,7 @@ export default class App extends Component{
     const count = this.props.store.getState()
     if(count%2===1){
       //调用store的方法更新状态
-      this.props.store.dispatch({type:INCREMENT,data:number})
+      this.props.store.dispatch(actions.increment(number))
     }
 
     //得到原本的count状态
@@ -59,7 +59,7 @@ export default class App extends Component{
     const number = this.select.value*1
 
     setTimeout(()=>{
-      this.props.store.dispatch({type:INCREMENT,data:number})
+      this.props.store.dispatch(actions.increment(number))
     },1000)
 
     //得到原本的count状态

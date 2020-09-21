@@ -1,13 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import {createStore} from "redux"
+
 
 import App from "./components/app"
-import {counter} from "./redux/reducers"
+import store from "./redux/store"
 
-//生成一个store对象
-const store = createStore(counter)
-console.log(store,store.getState());
 
 function render(){
   ReactDOM.render(<App store={store} />,document.getElementById("root"))
