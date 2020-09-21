@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import {Button,Toast} from "antd-mobile";
 
-import 'antd-mobile/dist/antd-mobile.css'
+// import 'antd-mobile/dist/antd-mobile.css'
 
 export default class App extends Component{
   handleClick = () =>{
