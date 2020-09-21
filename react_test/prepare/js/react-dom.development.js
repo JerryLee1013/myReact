@@ -13644,7 +13644,7 @@ var possibleStandardNames = {
   acceptcharset: 'acceptCharset',
   'accept-charset': 'acceptCharset',
   accesskey: 'accessKey',
-  action: 'action',
+  action: 'action-types.js',
   allowfullscreen: 'allowFullScreen',
   alt: 'alt',
   as: 'as',
